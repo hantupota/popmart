@@ -1,3 +1,9 @@
+/**************************/
+/*    Nulled & Decoded    */
+/*   By Magd Almuntaser   */
+/*         TTMTT          */
+/*   Only For WA v7.0.0   */
+/**************************/
 
 'use strict'
 const fs = require('fs'),

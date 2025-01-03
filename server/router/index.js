@@ -10,7 +10,6 @@ const controllers = require("../controllers");
 //const store = require("../controllers/store");
 const { initialize } = require("../whatsapp");
 const { sendBlastMessage } = require("../controllers/blast");
-const { clearChatSession } = require("../controllers/incomingMessage");
 //const CryptoJS = require("crypto-js");
 const {
   checkDestination,
@@ -67,7 +66,6 @@ router.post("/backend-logout-device", controllers.logoutDevice);
 router.post("/backend-check-number", controllers.checkNumber);
 
 router.post("/backend-clearCache", async (req, res) => {
-  clearChatSession();
   await controllers.sendAvailable(req, res);
   await cache.myCache.flushAll();
   console.log("Cache cleared");
