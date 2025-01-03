@@ -115,11 +115,10 @@ const sendBlastMessage = async (req, res) => {
 			  messageData[index].message = JSON.parse(messageData[index].message);
 			  if (messageData[index].message.text && messageData[index].message.text.trim() !== '') {
 					if (messageData[index].message.footer && messageData[index].message.footer.trim() !== '') {
-						messageData[index].message.text = `${messageData[index].message.text}\n\n> _${messageData[index].message.footer}_`;
+						messageData[index].message.text = wa.randomizeText(`${messageData[index].message.text}\n\n> _${messageData[index].message.footer}_`);
 						delete messageData[index].message.footer;
 					}
 			  }
-			  messageData[index].message = JSON.stringify(messageData[index].message);
               sendResult = await wa.sendMessage(
                 parsedData.sender,
                 messageData[index].receiver,
